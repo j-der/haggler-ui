@@ -15,12 +15,19 @@ var config = {
     loaders: [
       { test: /\.css$/, loader: "style-loader!css-loader" },
       {
-        test: /\.jsx?$/, // A regexp to test the require path. accepts either js or jsx
+        test: /\.js$/, // A regexp to test the require path
         loaders: ['react-hot','babel'], // The module to load. "babel" is short for "babel-loader"
-        exclude: /node_modules/,
         include: path.join(__dirname, 'src')
       }
     ]
+  },
+  resolve: {
+    root: path.resolve(__dirname),
+    alias: {
+      components: 'src/components',
+      style: 'src/style'
+    },
+    extensions: ['', '.js']
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()

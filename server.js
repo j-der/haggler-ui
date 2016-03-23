@@ -17,5 +17,5 @@ new WebpackDevServer(webpack(config), {
     console.log(err);
   }
 
-  console.log('Building modules to serve at localhost:8080');
+  console.log('⚡ Building modules to serve at localhost:8080');
 });
